@@ -28,7 +28,7 @@ jobs:
       - name: Hello World Feature
         run: |
             echo Hello, ${{ secrets.HELLO_NAME }}
-            echo {{ github.ref }} 
+            echo ${{ github.ref }} 
   # This workflow contains a single job called "build"
   build-dev:
     if: contains(github.ref, 'development')
