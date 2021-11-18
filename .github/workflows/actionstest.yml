@@ -26,8 +26,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Hello World Feature
-        run: echo Hello, ${{ secrets.HELLO_NAME }} \
-             echo {{ github.ref }} 
+        run: |
+            echo Hello, ${{ secrets.HELLO_NAME }}
+            echo {{ github.ref }} 
   # This workflow contains a single job called "build"
   build-dev:
     if: contains(github.ref, 'development')
