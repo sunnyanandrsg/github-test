@@ -27,5 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, ${{ secrets.hello_no_name }}
+        env:
+          HELLO_NAME: ${{ secrets.hello_no_name }}
+        run: echo Hello, "$HELLO_NAME"
 
